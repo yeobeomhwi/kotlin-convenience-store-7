@@ -1,10 +1,12 @@
 package store
 
+import camp.nextstep.edu.missionutils.Console
 import java.io.File
 
 fun main() {
     // TODO: 프로그램 구현
-    productInventory();
+    productInventory()
+    purchase()
 }
 
 
@@ -31,6 +33,7 @@ fun readProducts() {
     }
     println()
     productsList.forEach { println(it) }
+    println()
 }
 
 
@@ -40,4 +43,10 @@ fun formatProductInfo(name: String, price: String, quantity: String, promotion: 
     } else {
         "- $name $price $quantity"
     }
+}
+
+fun purchase(){
+    println("구매하실 상품명과 수량을 입력해 주세요. (예: [사이다-2],[감자칩-1])")
+    val purchases = Console.readLine()
+    println(purchases)
 }
